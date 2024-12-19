@@ -128,13 +128,69 @@
     .nav-buttons a:hover {
       background-color: #1c7bb6;
     }
+
+    /* Contact Section Styling */
+    .contact-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-info {
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      margin: 10px 0;
+    }
+
+    .contact-column h2 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .contact-column p {
+      font-size: 18px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    /* Center the "Get service instantly." text */
+    .home-section-text {
+      text-align: center; /* Center the text */
+      font-size: 18px;
+      color: #333;
+      margin: 20px 0;
+    }
   </style>
 </head>
 <body>
   <!-- Content Container -->
   <div class="content-container">
+    <!-- Home Section -->
+    <div id="home" class="section active">
+      <!-- Title and Tagline for Home -->
+      <div class="header">
+        <h1>MYDGP</h1>
+        <p style="font-size: 20px; color: #555;">Revolutionizing Service Management for a Smarter World.</p>
+      </div>
+      <!-- New Contact Column Section -->
+      <div class="contact-column">
+        <h2>Why Choose MYDGP?</h2>
+        <p>MYDGP offers streamlined, scalable solutions to manage your services efficiently. Our platform is designed to help businesses maximize results with minimal effort. Get started with us today!</p>
+      </div>
+    </div>
+
     <!-- Gallery Section -->
-    <div id="gallery" class="section active">
+    <div id="gallery" class="section">
       <div class="gallery-title">
         <p>Explore My Photos and Videos</p>
       </div>
@@ -157,24 +213,45 @@
         </div>
       </div>
     </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="section">
+      <div class="header">
+        <h1>Simplify Services, Amplify Results</h1>
+      </div>
+      <!-- Centered "Get service instantly." Text -->
+      <p class="home-section-text">Get service instantly.</p>
+
+      <!-- New Contact Column Section -->
+      <div class="contact-column">
+        <h2>Why Choose MYDGP?</h2>
+        <p>MYDGP offers streamlined, scalable solutions to manage your services efficiently. Our platform is designed to help businesses maximize results with minimal effort. Get started with us today!</p>
+      </div>
+
+      <div class="header">
+        <h1>Contact Me</h1>
+      </div>
+      <p class="contact-info">Feel free to reach out to me. Here’s how you can contact me:</p>
+      <!-- Contact Information Column -->
+      <div class="contact-column">
+        <h2>Contact Information</h2>
+        <ul class="contact-details" style="text-align: center;">
+          <li>Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mydgp7@gmail.com" target="_blank">mydgp7@gmail.com</a></li>
+          <li>Phone: <a href="tel:+917827343931">+91 78273 43931</a></li>
+        </ul>
+      </div>
+      <hr>
+    </div>
   </div>
 
   <!-- Bottom Navigation Bar -->
   <div class="bottom-nav">
+    <a href="javascript:void(0);" onclick="showSection('home')">Home</a>
     <a href="javascript:void(0);" onclick="showSection('gallery')">Gallery</a>
+    <a href="javascript:void(0);" onclick="showSection('contact')">Contact</a>
   </div>
 
   <script>
-    // Function to load content into the iframe based on button click
-    function loadContent(type) {
-      var iframe = document.getElementById('gallery-frame');
-      if (type === 'photos') {
-        iframe.src = "https://drive.google.com/embeddedfolderview?id=1e3OEyaST352zu7Jbap166vWLbivYSwKv#grid"; // Photos link
-      } else if (type === 'videos') {
-        iframe.src = "https://drive.google.com/embeddedfolderview?id=1G-SQHcALx0QA5YUITv8V7ilgu5ge1Kmw#grid"; // Videos link
-      }
-    }
-
     // Function to show the selected section and hide others
     function showSection(section) {
       var sections = document.querySelectorAll('.section');
@@ -182,6 +259,16 @@
         sec.classList.remove('active');
       });
       document.getElementById(section).classList.add('active');
+    }
+
+    // Function to load content into the iframe based on button click
+    function loadContent(type) {
+      var iframe = document.getElementById('gallery-frame');
+      if (type === 'photos') {
+        iframe.src = "https://drive.google.com/drive/folders/1eyEo1-LVQOzq2PH455iIt3G3zdddS1GS?usp=sharing"; // Photos link
+      } else if (type === 'videos') {
+        iframe.src = "https://drive.google.com/drive/folders/1EKkdtPwwMfJf-3Of83HQoX1OeOukA9rD?usp=sharing"; // Videos link
+      }
     }
   </script>
 </body>
